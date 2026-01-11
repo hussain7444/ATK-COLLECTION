@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATK COLLECTION | Premium Scrunchies</title>
+    <style>
+        :root {
+            --premium-gold: #c5a059;
+            --soft-black: #1a1a1a;
+            --white: #ffffff;
+            --light-grey: #f8f8f8;
+            --success-green: #25D366;
+        }
+
+        body { 
+            font-family: 'Helvetica Neue', Arial, sans-serif; 
+            margin: 0; 
+            background: var(--light-grey); 
+            color: var(--soft-black); 
+            line-height: 1.6;
+        }
+
+        header { 
+            background: var(--white); 
+            padding: 30px 20px; 
+            text-align: center; 
+            border-bottom: 3px solid var(--premium-gold); 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        header h1 { margin: 0; letter-spacing: 4px; font-weight: 300; }
+        header p { margin: 5px 0 0; font-size: 0.9rem; color: #888; text-transform: uppercase; letter-spacing: 2px; }
+
+        .container { max-width: 1100px; margin: auto; padding: 20px; }
+        .section-title { text-align: center; margin: 40px 0; letter-spacing: 1px; font-weight: 400; }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: 0.4s;
+            border: 1px solid #eee;
+            text-align: center;
+        }
+
+        .product-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+        .product-card img { width: 100%; height: 300px; object-fit: cover; }
+        
+        .product-details { padding: 20px; }
+        .product-name { font-weight: bold; font-size: 1.1rem; margin-bottom: 5px; }
+        .price { color: var(--premium-gold); font-size: 1.3rem; font-weight: bold; margin-bottom: 15px; }
+
+        /* Quantity Selector Styling */
+        .qty-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            background: #f0f0f0;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 5px 15px;
+            border-radius: 25px;
+        }
+        .qty-btn {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            color: var(--soft-black);
+            padding: 0 10px;
+        }
+        .qty-input {
+            width: 30px;
+            text-align: center;
+            border: none;
+            background: none;
+            font-size: 1rem;
+            font-weight: bold;
+            color: var(--soft-black);
+        }
+
+        .select-btn {
+            background: var(--soft-black);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .select-btn:hover { background: var(--premium-gold); }
+
+        .billing-card {
+            background: white;
+            padding: 30px;
+            margin: 50px auto;
+            max-width: 500px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; font-size: 0.85rem; }
+        input, textarea, select { 
+            width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; box-sizing: border-box;
+        }
+
+        .whatsapp-btn {
+            background: var(--success-green);
+            color: white;
+            padding: 15px;
+            border: none;
+            width: 100%;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        footer { text-align: center; padding: 40px; color: #999; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>ATK COLLECTION</h1>
+    <p>Soft • Premium • Handcrafted</p>
+</header>
+
+<div class="container">
+    <h2 class="section-title">THE PREMIUM COLLECTION</h2>
+    <div class="gallery-grid">
+        
+        <div class="product-card">
+            <img src="normal1.jpeg" alt="Premium Silk Scrunchie">
+            <div class="product-details">
+                <div class="product-name">Premium Silk Scrunchie</div>
+                <div class="price">₹49</div>
+                <div class="qty-wrapper">
+                    <button class="qty-btn" onclick="changeQty('qty1', -1)">-</button>
+                    <input type="text" id="qty1" class="qty-input" value="1" readonly>
+                    <button class="qty-btn" onclick="changeQty('qty1', 1)">+</button>
+                </div>
+                <button class="select-btn" onclick="selectItem('Premium Silk Scrunchie', 49, 'qty1')">Order Now</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="tulip5.jpeg" alt="Korean Tulip Scrunchies">
+            <div class="product-details">
+                <div class="product-name">Korean Tulip Scrunchies</div>
+                <div class="price">₹89</div>
+                <div class="qty-wrapper">
+                    <button class="qty-btn" onclick="changeQty('qty2', -1)">-</button>
+                    <input type="text" id="qty2" class="qty-input" value="1" readonly>
+                    <button class="qty-btn" onclick="changeQty('qty2', 1)">+</button>
+                </div>
+                <button class="select-btn" onclick="selectItem('Korean Tulip Scrunchies', 89, 'qty2')">Order Now</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="normal6.jpeg" alt="Combo of 4">
+            <div class="product-details">
+                <div class="product-name">Combo of 4 (Ultra Soft)</div>
+                <div class="price">₹159</div>
+                <div class="qty-wrapper">
+                    <button class="qty-btn" onclick="changeQty('qty3', -1)">-</button>
+                    <input type="text" id="qty3" class="qty-input" value="1" readonly>
+                    <button class="qty-btn" onclick="changeQty('qty3', 1)">+</button>
+                </div>
+                <button class="select-btn" onclick="selectItem('Combo of 4', 159, 'qty3')">Order Now</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="tulip1.jpeg" alt="Combo of 3">
+            <div class="product-details">
+                <div class="product-name">Combo of 3 (Tulip Special)</div>
+                <div class="price">₹219</div>
+                <div class="qty-wrapper">
+                    <button class="qty-btn" onclick="changeQty('qty4', -1)">-</button>
+                    <input type="text" id="qty4" class="qty-input" value="1" readonly>
+                    <button class="qty-btn" onclick="changeQty('qty4', 1)">+</button>
+                </div>
+                <button class="select-btn" onclick="selectItem('Combo of 3', 219, 'qty4')">Order Now</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="billing-card" id="checkout">
+        <h2 style="text-align: center;">Order Summary</h2>
+        <div class="form-group">
+            <label>Selected Item & Total Bill</label>
+            <input type="text" id="selected_prod" readonly style="background: #eee; font-weight: bold; color: var(--premium-gold);">
+        </div>
+        <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" id="cust_name" placeholder="Enter your name">
+        </div>
+        <div class="form-group">
+            <label>Full Address</label>
+            <textarea id="cust_address" rows="3" placeholder="Pincode ke saath address likhein"></textarea>
+        </div>
+        <button class="whatsapp-btn" onclick="sendOrder()">CONFIRM ORDER ON WHATSAPP</button>
+    </div>
+</div>
+
+<footer>
+    &copy; 2026 ATK COLLECTION | Handcrafted Premium Accessories
+</footer>
+
+<script>
+    // Quantity badhane ya ghatane ke liye
+    function changeQty(id, delta) {
+        let input = document.getElementById(id);
+        let currentVal = parseInt(input.value);
+        let newVal = currentVal + delta;
+        if(newVal < 1) newVal = 1;
+        input.value = newVal;
+    }
+
+    // Product ko form mein bhejte waqt calculation karne ke liye
+    function selectItem(name, price, qtyId) {
+        let quantity = document.getElementById(qtyId).value;
+        let totalPrice = price * quantity;
+        document.getElementById('selected_prod').value = name + " x" + quantity + " (Total: ₹" + totalPrice + ")";
+        document.getElementById('checkout').scrollIntoView({behavior: 'smooth'});
+    }
+
+    // WhatsApp par bhejte waqt pura message banane ke liye
+    function sendOrder() {
+        let mobile = "918291767175"; 
+        let order = document.getElementById('selected_prod').value;
+        let name = document.getElementById('cust_name').value;
+        let address = document.getElementById('cust_address').value;
+
+        if(!name || !address || !order) {
+            alert("Pehle product select karein aur details bharein!");
+            return;
+        }
+
+        let message = "*✨ NEW ORDER FROM ATK COLLECTION ✨*%0A%0A" +
+                      "*Order Details:* " + order + "%0A" +
+                      "*Customer Name:* " + name + "%0A" +
+                      "*Delivery Address:* " + address + "%0A%0A" +
+                      "Please confirm my order!";
+
+        window.open("https://wa.me/" + mobile + "?text=" + message, '_blank');
+    }
+</script>
+
+</body>
+</html>
